@@ -13,11 +13,11 @@
 body {
   margin: 0;
   background-color: #f0f0f0;
+  background-image: url('./images/Background.png');
+  background-repeat: no-repeat;
 }
 
 .container {
-  background-image: url('./images/Background.png');
-  background-repeat: no-repeat;
   text-align: center;
   padding-top: 30px;
   position: relative;
