@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-image: url('./images/Background.png');
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 30px;
+  position: relative;
+}
+
+.title {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+form {
+  width: 557px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 61px;
+  margin-bottom: 168px;
+}
+
+.search_bar {
+  width: 100%;
+  height: 67px;
+  border: none;
+  border-radius: 15px 0 0 15px;
+  font-size: 20px;
+  padding-left: 30px;
+  color: hsl(0, 0%, 17%);
+  cursor: pointer;
+}
+
+.search_bar:focus-visible {
+  outline: none;
+}
+
+.btn {
+  width: 61px;
+  height: 67px;
+  background-color: #000;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  transition: background-color ease-in 200ms;
+}
+
+.btn:hover {
+  background-color: hsl(0, 0%, 25%);
+}
+
+span {
+  margin-top: 10px;
+  color: red;
+  text-align: start;
+}
+
+.details {
+  max-width: 1115px;
+  min-height: 167px;
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  color: hsl(0, 0%, 17%);
+  padding: 20px;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  right: 20%;
+  z-index: 1;
+}
+
+.boxes {
+  border-left: 1px solid hsl(0, 0%, 17%, 0.2);
+  padding-inline: 20px;
+}
+
+.boxes:nth-of-type(1) {
+  border: none;
+}
+
+.boxes h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: hsl(0, 0%, 59%);
+}
+
+.boxes h1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#map-container {
+  width: 100%;
+  height: 636px;
+  margin: 0;
+  padding: 0;
+}
+
+.mapboxgl-ctrl-bottom-left,
+.mapboxgl-ctrl-bottom-right {
+  display: none;
+}
+
+@media (max-width: 1090px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+
+  .boxes {
+    border: none;
+  }
+}
+
+@media (max-width: 590px) {
+  form {
+    width: 300px;
+  }
+
+  .search_bar {
+    font-size: 13px;
+  }
+}
