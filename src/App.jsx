@@ -44,8 +44,11 @@ function App() {
         }
       })
       .catch(err => console.error(err))
-
-    setMapLoading(true)
+     
+    setTimeout(() => {
+      return setMapLoading(true)
+    }, 1000)
+    
   }, [RenderUseEffect])
 
   function handleChange(event) {
