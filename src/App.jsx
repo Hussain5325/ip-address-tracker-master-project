@@ -22,7 +22,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch(`http://ipwho.is/${DATA.search}`)
+    fetch(`https://ipwho.is/${DATA.search}`)
       .then(res => res.json())
       .then(json => {
         if (json.success) {
