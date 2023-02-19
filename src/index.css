@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  background-image: url('https://i.ibb.co/94Wb5d8/pattern-bg.png');
+  background-image: url('https://i.ibb.co/pbT5z64/pattern-bg.png');
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
@@ -122,6 +122,10 @@ span {
 .mapboxgl-ctrl-bottom-left,
 .mapboxgl-ctrl-bottom-right {
   display: none;
+}
+
+.mapboxgl-ctrl-icon {
+  margin: 0;
 }
 
 @media (max-width: 1090px) {

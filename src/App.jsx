@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Map from './assets/Map'
 
 function App() {
-  const [MapLoadind, setMapLoading] = useState(false)
   const [RenderUseEffect, setRenderUseEffect] = useState(false)
   const [DATA, setDATA] = useState({
     IP: '',
@@ -17,7 +16,11 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    setMapLoading(false)
+    setDATA(prev => ({
+      ...prev,
+      lat: '',
+      lon: '',
+    }))
     setRenderUseEffect(prev => !prev)
   }
 
@@ -40,14 +43,12 @@ function App() {
           setDATA(prev => ({
             ...prev,
             error: true,
+            lat: '5',
+            lon: '5',
           }))
         }
       })
       .catch(err => console.error(err))
-
-    setTimeout(() => {
-      return setMapLoading(true)
-    }, 500)
   }, [RenderUseEffect])
 
   function handleChange(event) {
@@ -60,15 +61,14 @@ function App() {
     })
   }
 
-  const style = {
-    display: DATA.error ? 'block' : 'none',
-  }
-
   return (
     <main>
       <section className='container'>
         <h1 className='title'>IP Address Tracker</h1>
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          style={{ marginBottom: DATA.error && '139px' }}
+        >
           <input
             type='text'
             name='search'
@@ -83,7 +83,9 @@ function App() {
           <button className='btn'>
             <img src='./images/icon-arrow.svg' alt='arrow' />
           </button>
-          <span style={style}>Please enter correct IP Adress.</span>
+          <span style={{ display: DATA.error ? 'block' : 'none' }}>
+            Please enter correct IP Adress.
+          </span>
         </form>
         <section className='details'>
           <div className='boxes'>
@@ -103,7 +105,7 @@ function App() {
             <h1 className='ISP'>{DATA.ISP}</h1>
           </div>
         </section>
-        {MapLoadind && <Map lat={DATA.lat} lon={DATA.lon} />}
+        {DATA.lat | DATA.lon && <Map lat={DATA.lat} lon={DATA.lon} />}
       </section>
     </main>
   )
