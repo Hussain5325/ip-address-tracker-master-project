@@ -18,7 +18,6 @@ body {
 .container {
   background-image: url('https://i.ibb.co/94Wb5d8/pattern-bg.png');
   background-repeat: no-repeat;
-  background-size: contain;
   text-align: center;
   padding-top: 30px;
   position: relative;
