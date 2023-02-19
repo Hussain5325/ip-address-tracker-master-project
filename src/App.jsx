@@ -47,7 +47,7 @@ function App() {
 
     setTimeout(() => {
       return setMapLoading(true)
-    }, 1000 * 1)
+    }, 500)
   }, [RenderUseEffect])
 
   function handleChange(event) {
