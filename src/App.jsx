@@ -36,7 +36,6 @@ function App() {
             lon: json.longitude,
             error: false,
           }))
-          setMapLoading(true)
         } else {
           setDATA(prev => ({
             ...prev,
@@ -45,6 +44,10 @@ function App() {
         }
       })
       .catch(err => console.error(err))
+
+    setTimeout(() => {
+      return setMapLoading(true)
+    }, 500)
   }, [RenderUseEffect])
 
   function handleChange(event) {
